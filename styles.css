@@ -4,7 +4,7 @@
   --background-color: #0f0f0f;
   --text-color: #ffffff;
   --bar-color: #ff8c00;
-  --button-color: #ff6600;
+  --button-color: #00ffff;
   --container-bg: rgba(255, 140, 0, 0.07);
   --dropdown-bg: rgba(30, 30, 30, 0.8);
   --primary-orange: #ff8c00;
@@ -195,3 +195,4 @@ button:hover {
   backdrop-filter: blur(4px);
   box-shadow: 0 0 5px rgba(255, 140, 0, 0.3);
 }
+
