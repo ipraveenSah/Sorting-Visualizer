@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+:root {
+  --background-color: #0f0f0f;
+  --text-color: #ffffff;
+  --bar-color: #ff8c00;
+  --button-color: #ff6600;
+  --container-bg: rgba(255, 140, 0, 0.07);
+  --dropdown-bg: rgba(30, 30, 30, 0.8);
+  --primary-orange: #ff8c00;
+  --neon-orange: #ff5500;
+
+  --light-background: #f7f7f7;
+  --light-text: #222;
+  --light-bar: #ff6f00;
+  --light-button: #ff9000;
+  --light-container: rgba(255, 111, 0, 0.07);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+body.light-mode {
+  --background-color: var(--light-background);
+  --text-color: var(--light-text);
+  --bar-color: var(--light-bar);
+  --button-color: var(--light-button);
+  --container-bg: var(--light-container);
+}
+
+h1 {
+  margin: 20px 0;
+  text-shadow: 0 0 5px var(--bar-color);
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+  background: var(--container-bg);
+  border-radius: 15px;
+  backdrop-filter: blur(6px);
+  z-index: 10;
+  position: relative;
+}
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(to right, var(--primary-orange), var(--neon-orange));
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 140, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 140, 0, 0.6);
+}
+
+#array-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 6px;
+  width: 90%;
+  height: 350px; /* ⬅️ Increased from 320px */
+  margin-top: 30px;
+  padding: 25px 8px 8px 8px; /* ⬅️ Extra padding at the top */
+  background: var(--container-bg);
+  border-radius: 15px;
+  overflow-x: auto;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.bar {
+  background-color: var(--bar-color);
+  width: 25px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  border-radius: 6px 6px 0 0;
+  transition: background-color 0.3s, height 0.3s;
+}
+
+.bar span {
+  position: absolute;
+  bottom: 5px;
+  font-size: 12px;
+  color: white;
+}
+
+#speed {
+  width: 150px;
+  margin-left: 10px;
+}
+
+.theme-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+  border: 2px solid var(--text-color);
+  border-radius: 50%;
+  background: none;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+  z-index: 100;
+}
+
+.theme-button:hover {
+  transform: rotate(20deg);
+}
+
+/* Dropdown Button */
+.dropdown {
+  position: relative;
+  z-index: 9999;
+}
+
+#dropdown-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background: linear-gradient(to right, var(--primary-orange), var(--neon-orange));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(255, 140, 0, 0.4);
+}
+
+#dropdown-button:hover {
+  box-shadow: 0 0 12px rgba(255, 140, 0, 0.7);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: var(--dropdown-bg);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 111, 0, 0.4);
+  z-index: 9999;
+  top: 45px;
+  left: 0;
+  width: 180px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 140, 0, 0.3);
+}
+
+.dropdown-content div {
+  padding: 12px 16px;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: background 0.2s;
+}
+
+.dropdown-content div:hover {
+  background: rgba(255, 111, 0, 0.2);
+}
+
+#description {
+  margin-top: 10px;
+  padding: 10px;
+  max-width: 90%;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-color);
+  background: var(--container-bg);
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 5px rgba(255, 140, 0, 0.3);
+}
